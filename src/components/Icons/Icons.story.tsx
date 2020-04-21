@@ -6,7 +6,8 @@ import {
   InstagramIcon,
   AppleIcon,
   SpotifyIcon,
-  YoutubeIcon
+  YoutubeIcon,
+  MenuIcon
 } from './index'
 
 storiesOf("Icons", module)
@@ -33,5 +34,10 @@ storiesOf("Icons", module)
   .add("Youtube", () => (
     <div>
       <YoutubeIcon />
+    </div>
+  ))
+  .add("Menu", () => (
+    <div>
+      <MenuIcon />
     </div>
   ))

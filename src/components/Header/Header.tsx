@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './Header.styl';
 
 export type HeaderProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
 
