@@ -5,7 +5,7 @@ export default class Contact extends React.Component {
   render () {
     return (
       <main className={'textual-page'}>
-        <h1>צור קשר</h1>
+        <h1>צרו קשר</h1>
         <section>
           <h2>לפניות תקשורת:</h2>
           <h3>עמרי צורף</h3>

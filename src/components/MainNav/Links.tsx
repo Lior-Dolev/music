@@ -19,7 +19,7 @@ export const paths = {
   TOUR: { path: '/tour', text: 'הופעות' },
   LETTER: { path: '/letter', text: 'מכתב ממני' },
   ABOUT: { path: '/about', text: 'אודות' },
-  CONTACT: { path: '/contact', text: 'צור קשר' }
+  CONTACT: { path: '/contact', text: 'צרו קשר' }
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ to, text, pathname, onClick }) => (
