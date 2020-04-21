@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './Album.styl'
 
 interface Song {
   name: string;
@@ -45,9 +44,7 @@ export default class Album extends React.Component<AlbumProps, {}> {
     return (
       <article className={'album'}>
         <h1>{name}</h1>
-        <hr />
         <section>
-          <img src={frontCover} alt={'עטיפת האלבום'} />
           <ul role="album content">
             {songs && songs.map((song, i) =>
               <SongRow
@@ -57,6 +54,7 @@ export default class Album extends React.Component<AlbumProps, {}> {
               />
             )}
           </ul>
+          <img className={'img'} src={frontCover} alt={'עטיפת האלבום'} />
         </section>
       </article>
     )

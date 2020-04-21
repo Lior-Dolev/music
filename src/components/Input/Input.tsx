@@ -1,14 +1,9 @@
 import * as React from 'react';
-import CN from 'classnames';
-import './Input.styl';
 
 const DEFAULT_DIMENSIONS = {
   height: 30,
   width: 100
 }
-
-const CN_PREFIX = 'ld'
-const INPUT_CN = `${CN_PREFIX}-inp`
 
 interface InternalInputProps {
   defaultDimensions?: boolean;
@@ -40,7 +35,7 @@ export default class Input extends React.Component<InputProps, {}> {
 
     return (
       <input
-        className={CN(INPUT_CN, className)}
+        className={'input'}
         {...rest}
       />
     )

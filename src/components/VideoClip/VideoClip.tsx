@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './VideoClip.styl'
 
 interface VideoClipProps {
   src?: string;
@@ -7,7 +6,6 @@ interface VideoClipProps {
 
 export default class VideoClip extends React.Component<VideoClipProps, {}> {
   render() {
-    console.log('this.props', this.props)
     return (
       <iframe
         src={this.props.src}

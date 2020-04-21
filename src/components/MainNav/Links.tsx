@@ -5,10 +5,12 @@ export interface NavLinkProps {
   to: string;
   text: string;
   pathname: string;
+  onClick?: () => void
 }
 
 export interface LinkProps {
   pathname: string;
+  onClick?: () => void
 }
 
 export const paths = {
@@ -20,30 +22,36 @@ export const paths = {
   CONTACT: { path: '/contact', text: 'צור קשר' }
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, text, pathname }) => (
-  <Link to={to} className={to === pathname ? 'selected': ''} >{text}</Link>
+const NavLink: React.FC<NavLinkProps> = ({ to, text, pathname, onClick }) => (
+  <Link
+    to={to}
+    className={to === pathname ? 'link selected': 'link'}
+    onClick={onClick}
+  >
+    {text}
+  </Link>
 )
 
 export const HomeLink = (props: LinkProps) => (
-  <NavLink to={paths.HOME.path} text={paths.HOME.text} pathname={props.pathname} />
+  <NavLink to={paths.HOME.path} text={paths.HOME.text} pathname={props.pathname} onClick={props.onClick} />
 )
 
 export const AboutLink = (props: LinkProps) => (
-  <NavLink to={paths.ABOUT.path} text={paths.ABOUT.text} pathname={props.pathname} />
+  <NavLink to={paths.ABOUT.path} text={paths.ABOUT.text} pathname={props.pathname} onClick={props.onClick} />
 )
 
 export const TourLink = (props: LinkProps) => (
-  <NavLink to={paths.TOUR.path} text={paths.TOUR.text} pathname={props.pathname} />
+  <NavLink to={paths.TOUR.path} text={paths.TOUR.text} pathname={props.pathname} onClick={props.onClick} />
 )
 
 export const ContactLink = (props: LinkProps) => (
-  <NavLink to={paths.CONTACT.path} text={paths.CONTACT.text} pathname={props.pathname} />
+  <NavLink to={paths.CONTACT.path} text={paths.CONTACT.text} pathname={props.pathname} onClick={props.onClick} />
 )
 
 export const LetterLink = (props: LinkProps) => (
-  <NavLink to={paths.LETTER.path} text={paths.LETTER.text} pathname={props.pathname} />
+  <NavLink to={paths.LETTER.path} text={paths.LETTER.text} pathname={props.pathname} onClick={props.onClick} />
 )
 
 export const MusicLink = (props: LinkProps) => (
-  <NavLink to={paths.MUSIC.path} text={paths.MUSIC.text} pathname={props.pathname} />
+  <NavLink to={paths.MUSIC.path} text={paths.MUSIC.text} pathname={props.pathname} onClick={props.onClick} />
 )

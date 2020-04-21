@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './Modal.styl'
+import { CloseIcon } from '../../components'
 
 interface DialogProps {
   onClose: () => void;
@@ -35,7 +35,8 @@ export default class Dialog extends React.Component<DialogProps, {}> {
   render () {
     return (
       <div className={'dialog'}>
-        <div className={'dialog-window'} ref={node => this.node = node}>
+        <button><CloseIcon/></button>
+        <div className={'dialog-window'} ref={node => this.node = node}>  
           {this.props.children}
         </div>
         <div className={'dialog-mask'}></div>

@@ -6,12 +6,16 @@ import {
   AppleLink,
   SpotifyLink
 } from './Links'
-import './SocialNav.styl'
+import CN from 'classnames'
 
-export default class SocialNav extends React.Component {
+interface SocialNavProps {
+  className?: string;
+}
+
+export default class SocialNav extends React.Component<SocialNavProps, {}> {
   render() {
     return (
-      <nav className={'ld-social-nav'}>
+      <nav className={CN('social-nav', this.props.className)}>
         <FacebookLink />
         <InstagramLink />
         <YoutubeLink />

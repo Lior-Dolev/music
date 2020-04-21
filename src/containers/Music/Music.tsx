@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { Album, VideoClip, TextConverter } from '../../components'
+import { Album, VideoClip, TextConverter, MainNav } from '../../components'
 import { Meshakech_Keevim } from '../../../static/Albums'
-import './Music.styl'
 
 interface MusicProps {
   openModal: (content: React.ReactNode) => void;
@@ -28,13 +27,17 @@ export default class Music extends React.Component<MusicProps, {}> {
 
   render () {
     return (
-      <main className={'music'}>
-        <Album
-          name={Meshakech_Keevim.Name}
-          frontCover={Meshakech_Keevim.FrontCover}
-          songs={this.renderTracks()}
-        />
-      </main>
+      <React.Fragment>
+        <main className={'music'}>
+          <h1>מוזיקה</h1>
+          <hr/>
+          <Album
+            name={Meshakech_Keevim.Name}
+            frontCover={Meshakech_Keevim.FrontCover}
+            songs={this.renderTracks()}
+          />
+        </main>
+      </React.Fragment>
     )
   }
 }

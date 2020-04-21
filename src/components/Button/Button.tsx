@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './Button.styl'
 
 const DEFAULT_DIMENSIONS = {
   height: 30,
@@ -35,8 +34,8 @@ export default class Button extends React.Component<ButtonProps, {}> {
 
     return (
       <button
-        className={'ld-button'}
         style={defaultDimensions ? this.getStyle() : {}}
+        className={'button'}
         {...rest}
       >
         {children}
