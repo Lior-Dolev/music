@@ -231,7 +231,6 @@ p
 
 .textual-page
   text-align: center;
-  align-self: center;
   width 100%
 
   p
@@ -321,6 +320,9 @@ p
     z-index 101
     height 60vh
     width 60vw
+    
+    p
+      text-align center
 
     & > *
       height 100%
@@ -353,6 +355,28 @@ p
 
     svg
       fill white
+
+      &:hover
+        fill darken($pink, 30%)
+
+
+.lyrics
+  background-color white
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size medium
+  align-self: center;
+  text-align center
+
+  span
+    display block
+
+  section 
+    display inline-block
+
+    p
+      text-align right
+
 
 @media (min-width: $screen-lg-min)
   .music 
