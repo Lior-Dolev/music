@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { CloseIcon } from '../../components'
+import CN from 'classnames'
 
 interface DialogProps {
   onClose: () => void;
+  isFullScreen?: boolean;
 }
 
 export default class Dialog extends React.Component<DialogProps, {}> {
@@ -10,12 +12,12 @@ export default class Dialog extends React.Component<DialogProps, {}> {
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClick, false)
-    document.addEventListener('keydown', this.handleClick, false)
+    document.addEventListener('keydown', this.handleKey, false)
   }
 
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClick, false)
-    document.removeEventListener('keydown', this.handleClick, false)
+    document.removeEventListener('keydown', this.handleKey, false)
   }
 
   handleClick = (e: any) => {
@@ -34,7 +36,7 @@ export default class Dialog extends React.Component<DialogProps, {}> {
 
   render () {
     return (
-      <div className={'dialog'}>
+      <div className={CN('dialog', this.props.isFullScreen && 'full-screen')}>
         <button><CloseIcon/></button>
         <div className={'dialog-window'} ref={node => this.node = node}>  
           {this.props.children}
