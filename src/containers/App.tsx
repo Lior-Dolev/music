@@ -22,13 +22,15 @@ class App extends React.Component {
 		isModalOpen: false,
 		modalContent: null,
 		isCollaped: true,
-		isMobileMenuOpen: true
+		isMobileMenuOpen: true,
+		isVideo: false
 	}
 
-	openModal = (content: React.ReactNode) => {
+	openModal = (content: React.ReactNode, isVideo?: boolean) => {
 		this.setState({
 			isModalOpen: true,
-			modalContent: content
+			modalContent: content,
+			isVideo: isVideo
 		})
 	}
 
@@ -71,7 +73,7 @@ class App extends React.Component {
 						</MediaQuery>
 					</footer>
 				</div>
-				{this.state.isModalOpen && <Modal onClose={this.closeModal}>{this.state.modalContent}</Modal>}
+				{this.state.isModalOpen && <Modal isVideoDialog={this.state.isVideo} onClose={this.closeModal}>{this.state.modalContent}</Modal>}
 			</HashRouter>
 		);
 	}

@@ -405,6 +405,9 @@ p
       svg
         fill: black;
 
+        &:hover
+          fill darken($pink, 30%)
+
     .dialog-window
       display: inline-block;
       position: fixed;
@@ -430,6 +433,24 @@ p
       opacity: 0.6;
       overflow: hidden;
       z-index: 100;
+
+  &.video
+    .container
+      display: inline-block;
+      position: fixed;
+      top: 50%;
+      right: 50%;
+      z-index: 101;
+      transform: translate(50%, -50%);
+
+      button
+        margin-top -30px
+
+        svg
+          fill  white
+  
+          &:hover
+            fill darken($pink, 30%)
 
 
 @media (min-width: $screen-sm-min)
