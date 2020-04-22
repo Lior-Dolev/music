@@ -68,6 +68,11 @@ html
     svg
       height 2rem
 
+p
+  margin-block-end: 0;
+  margin-block-start: 0;
+  text-align: right;
+
 .input
   background-color: transparent;
   outline: 0;
@@ -211,6 +216,9 @@ header, footer
   border 0
   transition: all .2s ease-in-out;
 
+p
+  max-width: 50em;
+
 .home
   text-align center
   margin 1rem
@@ -223,21 +231,34 @@ header, footer
 
 .textual-page
   text-align: center;
-  margin: 1rem;
   align-self: center;
-  max-width: 50em;
+  width 100%
+
+  p
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
 
   article
     font-size: larger;
+    display inline-block
+    margin: 1rem;
+
+  &.center
+    p
+      text-align center
+      margin-bottom 1rem
 
 .music
   text-align: center;
-  margin: 1rem;
+
+  hr
+    margin: 0 1rem;
 
   article
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1rem;
 
   section
     display: flex;
@@ -351,9 +372,6 @@ header, footer
     .button
       margin-right 0.5rem
       width: 9rem;
-  
-  .textual-page
-    margin 1rem 10%
 
 @media (max-width: $screen-xs-max)
   .form-inline > input

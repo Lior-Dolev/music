@@ -16,11 +16,11 @@ export default class SocialNav extends React.Component<SocialNavProps, {}> {
   render() {
     return (
       <nav className={CN('social-nav', this.props.className)}>
-        <FacebookLink />
-        <InstagramLink />
-        <YoutubeLink />
-        <AppleLink />
         <SpotifyLink />
+        <AppleLink />
+        <YoutubeLink />
+        <InstagramLink />
+        <FacebookLink />
       </nav>
     )
   }

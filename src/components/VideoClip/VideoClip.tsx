@@ -10,7 +10,7 @@ export default class VideoClip extends React.Component<VideoClipProps, {}> {
   render() {
     return (
       <iframe
-        src={this.props.src}
+        src={`${this.props.src}?rel=0`}
         frameBorder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

@@ -1,9 +1,11 @@
 import * as React from 'react'
 import * as _ from 'lodash'
+import CN from 'classnames'
 
 interface TextualPageProps {
   title: string;
   content: string;
+  className?: string;
 }
 
 export default (props: TextualPageProps) => {
@@ -17,7 +19,7 @@ export default (props: TextualPageProps) => {
   )
 
   return (
-    <main className={'textual-page'}>
+    <main className={CN('textual-page', props.className)}>
       <h1>{props.title}</h1>
       <article>
         {renderContent()}

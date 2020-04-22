@@ -8,6 +8,7 @@ export default class Tour extends React.Component {
       <TextualPage
         title={'הופעות'}
         content={TextPages.Tour}
+        className={'center'}
       />
     )
   }

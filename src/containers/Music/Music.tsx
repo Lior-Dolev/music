@@ -20,7 +20,8 @@ export default class Music extends React.Component<MusicProps, {}> {
       return {
         name: track.Name,
         onLyricsClick: () => this.props.openModal(<TextConverter text={track.Lyrics} />),
-        onVideoClick: this.getVideo(track.VideoLink)
+        onVideoClick: this.getVideo(track.VideoLink),
+        isClip: track.IsClip
       }
     })
   )

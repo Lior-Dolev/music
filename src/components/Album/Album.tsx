@@ -4,6 +4,7 @@ interface Song {
   name: string;
   onLyricsClick: () => void;
   onVideoClick?: () => void;
+  isClip?: boolean;
 }
 
 class AlbumProps {
@@ -18,6 +19,7 @@ interface SongRowProps {
   number: number;
   onLyricsClick: () => void;
   onVideoClick?: () => void;
+  isClip?: boolean;
 }
 
 const SongRow = (props: SongRowProps) => (
@@ -27,7 +29,7 @@ const SongRow = (props: SongRowProps) => (
       <span role={'song name'}>{props.name}</span>
     </h2>
     <span role={'links'} className={'left'}>
-      {props.onVideoClick && <button onClick={props.onVideoClick}>קליפ</button>}
+      {props.onVideoClick && <button onClick={props.onVideoClick}>{props.isClip ? 'קליפ' : 'האזנה'}</button>}
       <button onClick={props.onLyricsClick}>מילים</button>
     </span>
   </li>
