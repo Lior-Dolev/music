@@ -23,6 +23,9 @@ $screen-lg-min = 1200px
 *
   font-family: $font-family;
 
+#root
+  overflow hidden
+
 body, #root, .app
   height 100%
 
@@ -108,6 +111,9 @@ p
     background-color: darken($grey, 30%)
     border-color: darken($grey, 30%)
 
+  &.success
+    color: $pink
+    border-color: $pink
 
 .bg-dark
   background-color $dark

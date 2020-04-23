@@ -1,4 +1,5 @@
 import * as React from 'react'
+import CN from 'classnames'
 
 const DEFAULT_DIMENSIONS = {
   height: 30,
@@ -29,13 +30,14 @@ export default class Button extends React.Component<ButtonProps, {}> {
     const {
       defaultDimensions,
       children,
+      className,
       ...rest
     } = this.props
 
     return (
       <button
         style={defaultDimensions ? this.getStyle() : {}}
-        className={'button'}
+        className={CN('button', className)}
         {...rest}
       >
         {children}

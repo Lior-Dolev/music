@@ -9,24 +9,29 @@ export default class Newsletter extends React.Component {
     mail: ''
   }
 
+  renderForm = (subscribe, status) => {
+    
+    return (
+      <form className={'form-inline'}>
+        <Input
+          type={'email'}
+          placeholder={'mail@gmail.com'}
+          onChange={(e) => this.setState({ mail: (e.target as HTMLTextAreaElement).value})}
+        />
+        <Button className={status === 'success' ? 'success' : ''} onClick={() => subscribe({EMAIL: this.state.mail})}>
+          {status === 'success' ? 'תודה!' : 'הרשמה'}
+        </Button>
+      </form>
+    )
+  }
+
   render() {
     return (
       <article className={'newsletter'}>
         <label className={'form-label'}>בואו להיות חברי העט שלי</label>
         <MailchimpSubscribe
           url={url}
-          render={({ subscribe }) => (
-            <form className={'form-inline'}>
-              <Input
-                type={'email'}
-                placeholder={'mail@gmail.com'}
-                onChange={(e) => this.setState({ mail: (e.target as HTMLTextAreaElement).value})}
-              />
-              <Button onClick={() => subscribe({EMAIL: this.state.mail})}>
-                הרשמה
-              </Button>
-            </form>
-          )}
+          render={({ subscribe, status }) => this.renderForm(subscribe, status)}
         >
         </MailchimpSubscribe>
       </article>
